@@ -34,9 +34,8 @@ Primary use:    MultiPurpose Template
 13. Benefits (Process)
 14. Counters
 15. Portfolio / #portfolio
-    15.1. Works filter
-    15.2. Works grid
-    15.3. Works full view
+    15.1. Works grid
+    15.2. Works full view
 16. Banner section
 17. Testimonial
     18.1. Logotypes
@@ -232,7 +231,9 @@ img:not([draggable]), embed, object, video{
     max-width: 100%;
     height: auto;
 }
-
+.gCanyon-pic{
+    border-radius: 5px;
+}
 
 
 /* ==============================
@@ -443,7 +444,7 @@ hr.black{
     letter-spacing: 1px;
 }
 .font-alt{
-    font-family: Dosis, arial, sans-serif;
+    font-family: "Calibri Light", arial, sans-serif;
     text-transform: uppercase;
     letter-spacing: 0.2em;
 }
@@ -2363,7 +2364,7 @@ a.logo:hover{
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     
-    padding: 140px 0;
+    padding: 70px 0;
 }
 .small-section{
     padding: 70px 0;
@@ -3993,7 +3994,7 @@ a.logo:hover{
     top: 0;
     left: 0;
     border: 1px solid #111;
-    
+    background: #111;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
@@ -4015,7 +4016,7 @@ a.logo:hover{
     color: #fff;
 }
 .footer-social-links a:hover:before{
-    background: #111;
+    background: transparent;
 }
 
 a.link-to-top{
@@ -4028,8 +4029,12 @@ a.link-to-top{
     text-align: center;
     color: rgba(0,0,0, .2);
     font-size: 48px;
+    animation: hoverblink 1s linear alternate infinite;
 }
-
+@keyframes hoverblink {
+    0% {opacity: 1}
+    100% {opacity: 0}
+}
 
 /* ==============================
    Blog
@@ -4978,7 +4983,6 @@ section:hover .small-item-carousel .owl-next{
     font-weight: 400;
     text-transform: uppercase;
     text-align: center;
-    letter-spacing: 0.4em;    
     border: none;
 }
 .tpl-alt-tabs > li{
@@ -5019,6 +5023,8 @@ section:hover .small-item-carousel .owl-next{
 }
 .alt-tabs-icon > img {
     vertical-align: inherit;
+    height: 25%;
+    width: 25%;
 }
 
 
