@@ -31,7 +31,7 @@
     text-shadow: 3px 3px 4px #000, -1px -1px 1px #000;
 }
 .home-text * {
-    top: -12%;
+    top: -6%;
 }
 
 /* About Donald */
@@ -209,7 +209,7 @@ blockquote {
     }
     @media (min-width: 1200px){
         #skills .container {
-            width: 1170px;
+            width: 1245px;
         }
     }
 }
