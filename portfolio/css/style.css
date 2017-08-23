@@ -45,15 +45,14 @@ Primary use:    MultiPurpose Template
 20. Contact section
     20.1. Contact form
 21. Bottom menu / .bot-menu
-22. Google maps  /.google-map
-23. Footer / .footer
-24. Blog
+22. Footer / .footer
+23. Blog
     24.1. Pagination
     24.2. Comments
     24.3. Sidebar
-25. Shop
-26. Pricing
-27. Shortcodes
+24. Shop
+25. Pricing
+26. Shortcodes
     27.1. Owl Carousel
     27.2. Tabs
     27.3. Tabs minimal
@@ -63,8 +62,8 @@ Primary use:    MultiPurpose Template
     27.7. Progress bars
     27.8. Font icons examples
     27.9. Intro page
-28. Special demos
-29. Bootstrap multicolumn grid
+27. Special demos
+28. Bootstrap multicolumn grid
 
 
 /*------------------------------------------------------------------
@@ -3271,48 +3270,6 @@ a.logo:hover{
 
 
 /*
- * Works filter
- */
-
-.works-filter{
-    list-style: none;
-    padding: 0;
-    margin: 0 0 45px 0;
-    font-size: 13px;
-    text-transform: uppercase;
-    text-align: center;
-    letter-spacing: 0.4em;
-    color: #555;
-    cursor: default;
-}
-.works-filter a{
-    display: inline-block;
-    margin: 0 27px;
-    color: #999;
-    text-decoration: none;
-    
-    -webkit-transition: all 0.37s cubic-bezier(0.000, 0.000, 0.580, 1.000);  
-    -moz-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000); 
-    -o-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
-    -ms-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000); 
-    transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
-    
-    cursor: pointer;
-}
-.works-filter a:hover{
-    color: #111;
-    text-decoration: none;
-}
-.works-filter a.active{
-    color: #111;
-    cursor: default;
-}
-.works-filter a.active:hover{
-    color: #111;
-}
-
-
-/*
  * Works grid 
  */
 
@@ -4003,6 +3960,7 @@ a.logo:hover{
 
 .footer-social-links{
     font-size: 14px;
+    text-align: center;
 }
 .footer-social-links a{
     width: 25px;
@@ -4012,7 +3970,7 @@ a.logo:hover{
     margin: 0 6px;
     text-align: center;
     display: inline-block;
-    color: #111;
+    /*color: #111;*/
     
     -webkit-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);  
     -moz-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000); 
