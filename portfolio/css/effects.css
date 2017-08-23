@@ -1,0 +1,215 @@
+/* HTML/CSS Spin Start */
+.spinner.spinning {
+    -webkit-transform: rotateY(-180deg);
+}
+.spinner {
+    width: 100%;
+    height: 100%;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: 3s;
+}
+.spinner .face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -webkit-backface-visibility: hidden ;
+}
+.spinner .front {
+    z-index: 1;
+}
+.spinner .back {
+    -webkit-transform: rotateY(-180deg);
+}
+.rotateIn{
+    animation-duration: 3s;
+}
+/* HTML/CSS Spin End */
+
+/* Hero Text */
+.home-text,
+.main-nav {
+    text-shadow: 3px 3px 4px #000, -1px -1px 1px #000;
+}
+.home-text * {
+    top: -12%;
+}
+
+/* About Donald */
+blockquote {
+    margin: 1em 0;
+}
+.about-text p {
+    font-size: 1.1em;
+}
+.name {
+    font-size: 5em;
+}
+.under {
+    text-decoration: underline;
+    text-decoration-color: #BBB;
+}
+/* Nav Bar */
+.main-nav.dark .inner-nav ul > li > a:hover,
+.main-nav.dark .inner-nav ul > li > a:focus {
+    color: #EEE;
+    text-decoration: underline;
+    text-shadow: 0 0 0 #000;
+}
+.main-nav.dark .inner-nav ul > li > a.active{
+    text-decoration: overline;
+    text-shadow: 0 0 0 #000;
+}
+
+/* Filter Effect Start */
+.works-filter a {
+    line-height: 2em;
+    -webkit-perspective: 800px;
+    -moz-perspective: 800px;
+    perspective: 800px;
+}
+.works-filter a span {
+    position: relative;
+    display: inline-block;
+    padding: 3px 15px 0;
+    box-shadow: inset 0 3px #333;
+    -webkit-transition: background 0.6s;
+    -moz-transition: background 0.6s;
+    transition: background 0.6s;
+    -webkit-transform-origin: 50% 0;
+    -moz-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: 0% 50%;
+    -moz-transform-origin: 0% 50%;
+    transform-origin: 0% 50%;
+}
+.works-filter a span::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #333;
+    color: #333;
+    content: attr(data-hover);
+    -webkit-transform: rotateX(270deg);
+    -moz-transform: rotateX(270deg);
+    transform: rotateX(270deg);
+    -webkit-transition: -webkit-transform 0.6s;
+    -moz-transition: -moz-transform 0.6s;
+    transition: transform 0.6s;
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    transform-origin: 0 0;
+    pointer-events: none;
+}
+.works-filter a:focus span,
+.works-filter .active span,
+.works-filter a:active span {
+    background: #999;
+    color: #EEE;
+}
+.works-filter .active span::before,
+.works-filter a:active span::before {
+    color: #EEE;
+    -webkit-transform: rotateX(10deg);
+    -moz-transform: rotateX(10deg);
+    transform: rotateX(10deg);
+}
+/* Filter Effect End */
+
+/* Apps start */
+#work-grid > li:nth-child(2) > a > p {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.work-title {
+    font-size: 1.2em;
+}
+.work-descr {
+    font-size: 3em;
+}
+
+.work-intro{
+    height: 168px;
+    display: none;
+    text-decoration: none;
+    /*bottom: -294px;*/
+    /*opacity: 0;*/
+    /*visibility: hidden;*/
+    /*-webkit-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);*/
+    /*-moz-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);*/
+    /*-o-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);*/
+    /*-ms-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);*/
+    /*transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);*/
+}
+.work-item .work-img:after{
+    -webkit-transition: all 0.54s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+    -moz-transition: all 0.54s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+    -o-transition: all 0.54s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+    -ms-transition: all 0.54s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+    transition: all 0.54s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+}
+.work-item:hover p {
+    font-weight: 700;
+}
+
+.work-item:hover .work-intro{
+    display: block;
+    /*visibility: visible;*/
+    bottom: auto;
+    top: 50%;
+    color: #fff;
+
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    transform: translateY(-50%);
+
+    z-index: 3;
+}
+.works-grid.hover-white .work-item:hover .work-img:after{
+    background: rgba(250,250,250, .75);
+}
+/* Apps end */
+
+/* contact form animations */
+.btn-dangerous {
+    color: #fff;
+    background-color: #d9534f !important;
+    border-color: #d43f3a !important;
+    opacity: 1 !important;
+}
+.hinge {
+    cursor: not-allowed !important;
+    -webkit-animation-duration: 4s;
+    -moz-animation-duration: 4s;
+    -o-animation-duration: 4s;
+    animation-duration: 4s;
+}
+.rubberBand,
+.tada {
+    -webkit-animation-duration: 2s;
+    -moz-animation-duration: 2s;
+    -o-animation-duration: 2s;
+    animation-duration: 2s;
+}
+.footer-social-links {
+    font-size: 1.5em;
+}
+/* Shows only 4 skills at a time */
+@media (min-width: 992px) {
+    #skills .container {
+        width: 970px;
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+    @media (min-width: 1200px){
+        #skills .container {
+            width: 1170px;
+        }
+    }
+}
