@@ -1450,7 +1450,7 @@ a.btn-mod:focus{
 /* Logo (in navigation panel)*/
 
 .nav-logo-wrap{
-    float: left;
+    float: right;
     margin-right: 20px;
 }
 .nav-logo-wrap .logo{
@@ -1519,7 +1519,7 @@ a.logo:hover{
 .inner-nav{
     display: inline-block;
     position: relative;
-    float: right;
+    float: left;
 }
 .inner-nav ul{
     float: right;
@@ -2721,7 +2721,7 @@ a.logo:hover{
 .section-text{
     font-size: 15px;
     font-weight: 300;
-    color: #777;
+    color: black;
     line-height: 1.7;
 }
 .section-text blockquote{
@@ -4016,7 +4016,7 @@ a.logo:hover{
     color: #fff;
 }
 .footer-social-links a:hover:before{
-    background: transparent;
+    background: blue;
 }
 
 a.link-to-top{
