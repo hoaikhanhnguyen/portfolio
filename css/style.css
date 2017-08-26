@@ -406,9 +406,9 @@ blockquote{
 }
 blockquote p{
     margin-bottom: 1em;
-    font-size: 24px;
-    font-weight: 300;
-    font-style: normal;
+    font-size: 26px;
+    font-weight: 500;
+    font-style: italic;
     line-height: 1.6;
 }
 blockquote footer{    

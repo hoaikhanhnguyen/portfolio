@@ -7,7 +7,6 @@ function initialize(){
     enableMagnific();
     allowCollapseHamburger();
     allowTouchEvents();
-    bindScrollEventHandler();
     contactFormHandler();
     applyAnimations();
 }
@@ -93,73 +92,6 @@ function allowTouchEvents(){
     $('.work-item').on('touchstart',function(){})
 }
 
-
-/**
- * Handling Rotating Animation of the HTML/CSS icon.  This prevents the rotating animation
- * from happening before the user scrolls down to the Skills section.
- * This fixes the issue where if the animation happens after page load, then it will appear
- * on the DOM without regards to any other animations (nullifying libraries: wow.js and animate.css)
- */
-function bindScrollEventHandler(){
-    $(document).scroll(scrollEventHandler);
-}
-// Defining callback function that fires when the page is scrolled
-function scrollEventHandler() {
-    if(isScrolledIntoView($('.spinner')[0])) {
-        unbindScrollEventHandler();
-        beginRotateHeartbeat();
-    }
-}
-// Checks if the DOM element has rendered in view of the viewport
-function isScrolledIntoView(domelement) {
-    const elemTop = domelement.getBoundingClientRect().top;
-    const elemBottom = domelement.getBoundingClientRect().bottom;
-
-    const isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
-    return isVisible;
-}
-// Gets rid of the handler after the DOM element is viewable, so it doesn't keep needlessly firing
-function unbindScrollEventHandler() {
-    $(document).unbind('scroll', scrollEventHandler);
-}
-// Starts the heartbeat to rotate the HTML/CSS icon
-function beginRotateHeartbeat(){
-    const $spinner = $('.spinner');
-    const $rotate = $(".txt-rotate");
-    const animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-
-    // Removes conflicting properties created by initial spawn animation
-    $rotate.one(animationEnd, function(){
-        $(this).removeClass('wow slideInDown')
-            .removeAttr('style');
-        window.setTimeout(function(){
-            $rotate.addClass('flipOutY') // duration is 0.75s
-                .one(animationEnd, function() {
-                    $(this).removeClass('flipOutY')
-                        .addClass('rotateIn');
-                    // Start spins after an initial delay
-                    startSpins($spinner);
-                });
-        },2345);
-    });
-
-
-    function startSpins(spinner){
-        spinner.addClass('spinning');
-        // Sets pulse for the text rotation
-        $rotate.textrotator({
-            animation: "flipCube",
-            separator: " / ",
-            speed: 5555
-        });
-        // Sets pulse for the icon spinning
-        window.setInterval(animate, 5555, spinner);
-
-        function animate(spinner){
-            spinner.hasClass('spinning') ? spinner.removeClass('spinning') : spinner.addClass('spinning');
-        }
-    }
-}
 
 // Creates Front-end Handler for the Contact form
 function contactFormHandler(){
