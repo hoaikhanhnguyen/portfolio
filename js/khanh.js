@@ -145,7 +145,7 @@ function contactFormHandler(){
                 .append(icon_sending);
             setTimeout(checkFail,10000);
             //Ajax post data to server
-            $.post('./php/contact_me_smtp.php', post_data, function(response){
+            $.post('./php_mailer/mail_handler.php', post_data, function(response){
                 // fails due to some sort of server issue such as auth with with gmail SMTP or timeout
                 if (response.type === 'error' && response.error === 'server') {
                     sendFailed(response.text);
