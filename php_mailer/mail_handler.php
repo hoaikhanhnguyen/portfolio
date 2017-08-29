@@ -38,7 +38,7 @@ $mail->addReplyTo($email, $name/*email address of the person sending the message
 //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 $mail->isHTML(true);                                  // Set email format to HTML
 
-$mail->Subject = 'Here is the subject';
+$mail->Subject = 'Portfolio Form Message';
 $mail->Body    = $_POST['message'];
 $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
