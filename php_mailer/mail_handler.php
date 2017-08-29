@@ -1,8 +1,13 @@
 <?php
 require_once('email_config.php');
-require('phpmailer/PHPMailer/PHPMailerAutoload.php');
+require('phpmailer1/PHPMailer/PHPMailerAutoload.php');
+
+$name = $_POST['name'];
+$email = $_POST['email'];
+$message = $_POST['message'];
+
 $mail = new PHPMailer;
-$mail->SMTPDebug = 3;                               // Enable verbose debug output
+$mail->SMTPDebug = 0;                               // Enable verbose debug output
 
 $mail->isSMTP();                                      // Set mailer to use SMTP
 $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
@@ -21,11 +26,11 @@ $options = array(
     )
 );
 $mail->smtpConnect($options);
-$mail->From = 'example@gmail.com';//your email sending account
-$mail->FromName = 'Mailer';//your email sending account name
-$mail->addAddress('coding.khanh@gmail.com'/*your email address, or the email the sender if you are sending confirmation*/,'Khanh' /*email address user name*/);     // Add a recipient
+$mail->From = $email;//your email sending account
+$mail->FromName = $name;//your email sending account name
+$mail->addAddress('coding.khanh@gmail.com','Khanh');     // Add a recipient
 //$mail->addAddress('ellen@example.com');               // Name is optional
-$mail->addReplyTo('coding.khanh@gmail.com'/*email address of the person sending the message, so you can reply*/);
+$mail->addReplyTo($email, $name/*email address of the person sending the message, so you can reply*/);
 //$mail->addCC('cc@example.com');
 //$mail->addBCC('bcc@example.com');
 
@@ -34,7 +39,7 @@ $mail->addReplyTo('coding.khanh@gmail.com'/*email address of the person sending 
 $mail->isHTML(true);                                  // Set email format to HTML
 
 $mail->Subject = 'Here is the subject';
-$mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+$mail->Body    = $_POST['message'];
 $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
 if(!$mail->send()) {

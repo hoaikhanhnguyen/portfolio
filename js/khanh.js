@@ -134,9 +134,9 @@ function contactFormHandler(){
         if (proceed) {
             //data to be sent to server
             var post_data = {
-                'userName': user_name,
-                'userEmail': user_email,
-                'userMessage': user_message
+                'name': user_name,
+                'email': user_email,
+                'message': user_message
             };
 
             $submit.addClass('disabled')
