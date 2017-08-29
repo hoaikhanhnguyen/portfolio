@@ -147,21 +147,21 @@ function contactFormHandler(){
             //Ajax post data to server
             $.post('./php_mailer/mail_handler.php', post_data, function(response){
                 // fails due to some sort of server issue such as auth with with gmail SMTP or timeout
-                if (response.type === 'error' && response.error === 'server') {
+                if (response.type === 'error' && response === 'server') {
                     sendFailed(response.text);
                     window.mail = response.message;
                     return false;
                 }
                 else if (response.type === 'error' && response.error === 'client') {
                     // fails due to client not specifying the correct parameters
-                    var output = '<div class="error">' + response.text + '</div>';
+                    var output = '<div class="error">' + response + '</div>';
                     $submit.addClass('disabled btn-dangerous animated shake')
                         .text('Message not sent ')
                         .append(icon_fail);
                 }
                 else {
                     // success.  mail is sent and user sees confirmation
-                    output = '<div class="success">' + response.text + '</div>';
+                    output = '<div class="success">' + response + '</div>';
                     $submit.addClass('btn-success animated flash')
                         .text('Sent! ')
                         .append(icon_sent);
@@ -170,11 +170,11 @@ function contactFormHandler(){
                     $forms.val('');
                 }
                 $alert.hide().html(output).slideDown();
-            }, 'json');
+            });
 
         }
 
-        return false;
+        // return false;
     });
     function sendFailed(text){
         const animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
