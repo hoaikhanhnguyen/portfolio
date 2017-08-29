@@ -45,7 +45,6 @@
         init_counters();
         init_team();
         initPageSliders();
-        init_map();
         init_wow();
         init_masonry();
     });

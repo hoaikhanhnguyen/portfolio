@@ -17,7 +17,7 @@ function appendEmail(){
     e += 'ail.com';
     var m = 'mai';
     m += 'lto:';
-    $('#e').text(e).attr('href', `${m+=e}?;%20&body=Hi%20Khanh&#44;`)
+    $('#e').text(e).attr('href', `${m+=e}`);
 }
 // Appending Sensitive Information to prevent bot sniffing
 function appendPhone(){
