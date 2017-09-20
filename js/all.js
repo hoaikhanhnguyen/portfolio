@@ -42,7 +42,6 @@
         init_parallax();
         init_shortcodes();
         init_tooltips();
-        init_counters();
         init_team();
         initPageSliders();
         init_wow();
@@ -52,7 +51,7 @@
     $(window).resize(function(){
         
         init_classic_menu_resize();
-        init_side_panel_resize()
+        init_side_panel_resize();
         js_height_init();
         split_height_init();
         
@@ -433,11 +432,6 @@
             
             return false;
         });
-        
-        // Responsive video
-        $(".video, .resp-media, .blog-media").fitVids();
-        $(".work-full-media").fitVids(); 
-               
     }
     
     
@@ -458,28 +452,7 @@
         
     }
     
-    
-    
-    /* ---------------------------------------------
-     Some facts section
-     --------------------------------------------- */
-    
-     function init_counters(){
-        $(".count-number").appear(function(){
-            var count = $(this);
-            count.countTo({
-                from: 0,
-                to: count.html(),
-                speed: 1300,
-                refreshInterval: 60,
-            });
-            
-        });
-    }
-    
-    
-    
-    
+
     /* ---------------------------------------------
      Team
      --------------------------------------------- */   
