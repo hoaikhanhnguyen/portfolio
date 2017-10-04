@@ -123,7 +123,7 @@ function contactFormHandler(){
             $('input[name=name]').css('border-color', '#e41919');
             proceed = false;
         }
-        if (user_email === "" || validateEmail(user_email)) {
+        if (user_email === "" || (!validateEmail(user_email))) {
             $('input[name=email]').css('border-color', '#e41919');
             proceed = false;
         }
