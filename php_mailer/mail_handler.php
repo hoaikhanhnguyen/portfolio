@@ -29,7 +29,7 @@ $options = array(
 $mail->smtpConnect($options);
 $mail->From = $email;//your email sending account
 $mail->FromName = $name;//your email sending account name
-$mail->addAddress('coding.khanh@gmail.com','Khanh');     // Add a recipient
+$mail->addAddress('coding.khanh@gmail.com');     // Add a recipient
 //$mail->addAddress('ellen@example.com');               // Name is optional
 $mail->addReplyTo($email, $name/*email address of the person sending the message, so you can reply*/);
 //$mail->addCC('cc@example.com');
@@ -48,5 +48,11 @@ if(!$mail->send()) {
     echo 'Mailer Error: ' . $mail->ErrorInfo;
 } else {
     echo 'Message has been sent';
+}
+
+if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    echo("$email is a valid email address");
+} else {
+    echo("$email is not a valid email address");
 }
 ?>
