@@ -44,10 +44,10 @@ $mail->Body    = $_POST['message'];
 $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
 if(!$mail->send()) {
-    echo 'Message could not be sent.';
+    echo 'Message could not be sent. ';
     echo 'Mailer Error: ' . $mail->ErrorInfo;
 } else {
-    echo 'Message has been sent';
+    echo 'Message has been sent. ';
 }
 
 if (filter_var($email, FILTER_VALIDATE_EMAIL)) {

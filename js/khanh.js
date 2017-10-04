@@ -198,7 +198,7 @@ function contactFormHandler(){
     }
     function checkFail(){
         if ($submit.text() === "Sending... "){
-            sendFailed("Sorry, this service is currently unavailable.");
+            sendFailed("Sorry, this service is currently unavailable. " + response);
         }
     }
 
