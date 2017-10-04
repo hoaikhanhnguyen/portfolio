@@ -176,31 +176,31 @@ function contactFormHandler(){
 
         // return false;
     });
-    function sendFailed(text){
-        const animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-        const emailURL = $('#e').parent().parent().parent();
-
-        $submit.toggleClass('submit_btn_dead btn-dangerous animated hinge')
-            .text('Service Unavailable ')
-            .attr('type','button')
-            .append(icon_fail)
-            .one(animationEnd, function(){
-                $('#contact_form .clearfix').remove();
-                $alert.hide().html('<div class="error">'+text+'</div>').slideDown();
-                emailURL.addClass('animated rubberBand')
-                    .one(animationEnd,function(){
-                        emailURL.removeClass('animated rubberBand')
-                            .addClass('animated tada');
-                    })
-            })
-            .off('click');
-        $forms.off('keyup').off('keypress');
-    }
-    function checkFail(){
-        if ($submit.text() === "Sending... "){
-            sendFailed("Sorry, this service is currently unavailable. " + response);
-        }
-    }
+    // function sendFailed(text){
+    //     const animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+    //     const emailURL = $('#e').parent().parent().parent();
+    //
+    //     $submit.toggleClass('submit_btn_dead btn-dangerous animated hinge')
+    //         .text('Service Unavailable ')
+    //         .attr('type','button')
+    //         .append(icon_fail)
+    //         .one(animationEnd, function(){
+    //             $('#contact_form .clearfix').remove();
+    //             $alert.hide().html('<div class="error">'+text+'</div>').slideDown();
+    //             emailURL.addClass('animated rubberBand')
+    //                 .one(animationEnd,function(){
+    //                     emailURL.removeClass('animated rubberBand')
+    //                         .addClass('animated tada');
+    //                 })
+    //         })
+    //         .off('click');
+    //     $forms.off('keyup').off('keypress');
+    // }
+    // function checkFail(){
+    //     if ($submit.text() === "Sending... "){
+    //         sendFailed("Sorry, this service is currently unavailable. ");
+    //     }
+    // }
 
     //allows user to submit form by pressing ctrl+enter on any field.
     $forms.keypress(function () {
