@@ -124,7 +124,7 @@ function contactFormHandler(){
             proceed = false;
         }
         if (user_email === "" || (!validateEmail(user_email))) {
-            $('input[name=email]').css('border-color', '#e41919');
+            $('input[name=email]').css('border-color', '#e41919').val("").attr("placeholder", "Please enter a valid e-mail");
             proceed = false;
         }
         if (user_message === "") {
@@ -135,7 +135,7 @@ function contactFormHandler(){
         if (user_message === 'server is down'){
             proceed = true;
         }
-        //everything looks good! proceed...
+        //if forms are valid proceed...
         if (proceed) {
             //data to be sent to server
             var post_data = {
