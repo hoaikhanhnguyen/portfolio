@@ -1,2 +1,2 @@
 "# portfolio" 
-## Resume outdated as of Jan 2018 
+## Resume updated as of Jan 2020 
